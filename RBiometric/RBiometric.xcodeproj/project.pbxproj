@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68775489238BE73F00E869BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68775488238BE73F00E869BD /* AppDelegate.swift */; };
+		6877548B238BE73F00E869BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6877548A238BE73F00E869BD /* ViewController.swift */; };
+		6877548E238BE73F00E869BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6877548C238BE73F00E869BD /* Main.storyboard */; };
+		68775490238BE74000E869BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6877548F238BE74000E869BD /* Assets.xcassets */; };
+		68775493238BE74000E869BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68775491238BE74000E869BD /* LaunchScreen.storyboard */; };
+		68A7072F238BE79E0095DD63 /* RBiometricUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7072C238BE79E0095DD63 /* RBiometricUtils.swift */; };
+		68A70730238BE79E0095DD63 /* RBiometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7072D238BE79E0095DD63 /* RBiometric.swift */; };
+		68A70731238BE79E0095DD63 /* RBiometricController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A7072E238BE79E0095DD63 /* RBiometricController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		68775485238BE73F00E869BD /* RBiometric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBiometric.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68775488238BE73F00E869BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6877548A238BE73F00E869BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6877548D238BE73F00E869BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6877548F238BE74000E869BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68775492238BE74000E869BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		68775494238BE74000E869BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68A7072C238BE79E0095DD63 /* RBiometricUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBiometricUtils.swift; sourceTree = "<group>"; };
+		68A7072D238BE79E0095DD63 /* RBiometric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBiometric.swift; sourceTree = "<group>"; };
+		68A7072E238BE79E0095DD63 /* RBiometricController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBiometricController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68775482238BE73F00E869BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6877547C238BE73F00E869BD = {
+			isa = PBXGroup;
+			children = (
+				68775487238BE73F00E869BD /* RBiometric */,
+				68775486238BE73F00E869BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		68775486238BE73F00E869BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68775485238BE73F00E869BD /* RBiometric.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68775487238BE73F00E869BD /* RBiometric */ = {
+			isa = PBXGroup;
+			children = (
+				68A7072B238BE79E0095DD63 /* RBiometricClasses */,
+				68775488238BE73F00E869BD /* AppDelegate.swift */,
+				6877548A238BE73F00E869BD /* ViewController.swift */,
+				6877548C238BE73F00E869BD /* Main.storyboard */,
+				6877548F238BE74000E869BD /* Assets.xcassets */,
+				68775491238BE74000E869BD /* LaunchScreen.storyboard */,
+				68775494238BE74000E869BD /* Info.plist */,
+			);
+			path = RBiometric;
+			sourceTree = "<group>";
+		};
+		68A7072B238BE79E0095DD63 /* RBiometricClasses */ = {
+			isa = PBXGroup;
+			children = (
+				68A7072C238BE79E0095DD63 /* RBiometricUtils.swift */,
+				68A7072D238BE79E0095DD63 /* RBiometric.swift */,
+				68A7072E238BE79E0095DD63 /* RBiometricController.swift */,
+			);
+			path = RBiometricClasses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68775484238BE73F00E869BD /* RBiometric */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68775497238BE74000E869BD /* Build configuration list for PBXNativeTarget "RBiometric" */;
+			buildPhases = (
+				68775481238BE73F00E869BD /* Sources */,
+				68775482238BE73F00E869BD /* Frameworks */,
+				68775483238BE73F00E869BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RBiometric;
+			productName = RBiometric;
+			productReference = 68775485238BE73F00E869BD /* RBiometric.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6877547D238BE73F00E869BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Raj Sharma";
+				TargetAttributes = {
+					68775484238BE73F00E869BD = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 68775480238BE73F00E869BD /* Build configuration list for PBXProject "RBiometric" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6877547C238BE73F00E869BD;
+			productRefGroup = 68775486238BE73F00E869BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68775484238BE73F00E869BD /* RBiometric */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68775483238BE73F00E869BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68775493238BE74000E869BD /* LaunchScreen.storyboard in Resources */,
+				68775490238BE74000E869BD /* Assets.xcassets in Resources */,
+				6877548E238BE73F00E869BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68775481238BE73F00E869BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68A7072F238BE79E0095DD63 /* RBiometricUtils.swift in Sources */,
+				6877548B238BE73F00E869BD /* ViewController.swift in Sources */,
+				68775489238BE73F00E869BD /* AppDelegate.swift in Sources */,
+				68A70731238BE79E0095DD63 /* RBiometricController.swift in Sources */,
+				68A70730238BE79E0095DD63 /* RBiometric.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6877548C238BE73F00E869BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6877548D238BE73F00E869BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		68775491238BE74000E869BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68775492238BE74000E869BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68775495238BE74000E869BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		68775496238BE74000E869BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68775498238BE74000E869BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 378LTXHBBA;
+				INFOPLIST_FILE = RBiometric/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rheyansh.RBiometric;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		68775499238BE74000E869BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 378LTXHBBA;
+				INFOPLIST_FILE = RBiometric/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rheyansh.RBiometric;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68775480238BE73F00E869BD /* Build configuration list for PBXProject "RBiometric" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68775495238BE74000E869BD /* Debug */,
+				68775496238BE74000E869BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68775497238BE74000E869BD /* Build configuration list for PBXNativeTarget "RBiometric" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68775498238BE74000E869BD /* Debug */,
+				68775499238BE74000E869BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6877547D238BE73F00E869BD /* Project object */;
+}
