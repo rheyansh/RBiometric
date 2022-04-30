@@ -9,13 +9,13 @@
 import UIKit
 import LocalAuthentication
 
-open class RBiometric: NSObject {
+@objc open class RBiometric: NSObject {
     
     /// Shared instance
-    static let shared = RBiometric()
+    @objc static let shared = RBiometric()
     
     /// closure to observe authentication success
-    var onAuthSuccess : (() -> Void)?
+    @objc var onAuthSuccess : (() -> Void)?
     
     /// closure to observe authentication failure
 
@@ -25,11 +25,7 @@ open class RBiometric: NSObject {
     var controller: RBiometricController?
     
     /// If true, user will be redirected to Device Settings to enable biometric authentication. Once came back to app, authentication process will start automatically
-    var canShowAlertToEnableFromSetting = true {
-        didSet {
-            controller?.showAlertToEnableFromSetting = canShowAlertToEnableFromSetting
-        }
-    }
+    var canShowAlertToEnableFromSetting = true
     
     /// Biometric Authenticator context
     lazy var context: LAContext? = {
@@ -58,27 +54,39 @@ open class RBiometric: NSObject {
 extension RBiometric {
     
     /// Open Biometric Authenticator with default options
-    class func show() {
-        
+    @objc class func show() {
+
         let controller = RBiometric.shared.getBiometicController()
-        
         controller.showAlertToEnableFromSetting = RBiometric.shared.canShowAlertToEnableFromSetting
-        
+
         if let currentController = UIWindow.currentController {
-            if !controller.isBeingPresented {
-                // Present RBiometricController only if it is not already.
-                currentController.present(controller, animated: false) {
-                }
-                controller.biometricAuthentication()
+
+         if (currentController is RBiometricController) {
+            // do nothing
+         } else {
+            
+            if controller.isPresented {
+               // do nothing
+               return
+            } else {
+               controller.isPresented = true
+               DispatchQueue.main.async {
+                  currentController.present(controller, animated: false) {
+                  }
+               }
+               
+               controller.biometricAuthentication()
+               controller.onAuthSuccess = { handleSuccess() }
+               controller.onAuthError = { (error) in  handleError(error)}
             }
+         }
         }
-        
-        controller.onAuthSuccess = { handleSuccess() }
-        controller.onAuthError = { (error) in  handleError(error)}
     }
     
     /// Dismiss Biometric Authenticator
     class func dismissBiometric() {
+      RBiometric.shared.controller?.isPresented = false
+
         RBiometric.shared.controller?.dismiss(animated: true, completion: nil)
         RBiometric.shared.controller = nil
     }
@@ -120,7 +128,6 @@ extension RBiometric {
             return vc
         } else {
             controller = RBiometricController()
-            //controller!.showAlertToEnableFromSetting = RBiometric.shared.canShowAlertToEnableFromSetting
             controller!.modalPresentationStyle = .overCurrentContext
             controller!.modalTransitionStyle = .crossDissolve
             return controller!
@@ -209,7 +216,7 @@ public extension RBiometric {
 
 public extension RBiometric {
     
-    class var canAuthenticate: Bool {
+    class var canAuthenticateWithBiometric: Bool {
         var isBiometricAuthenticationAvailable = false
         var error: NSError? = nil
         if LAContext().canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error) {
@@ -217,6 +224,15 @@ public extension RBiometric {
         }
         return isBiometricAuthenticationAvailable
     }
+   
+   class var canAuthenticateWithOwner: Bool {
+       var isBiometricAuthenticationAvailable = false
+       var error: NSError? = nil
+       if LAContext().canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: &error) {
+           isBiometricAuthenticationAvailable = (error == nil)
+       }
+       return isBiometricAuthenticationAvailable
+   }
     
     class var hasFaceID: Bool {
         if #available(iOS 11.0, *) {
@@ -235,6 +251,10 @@ public extension RBiometric {
         }
         return canEvaluate
     }
+   
+   class var hasBiometric: Bool {
+       return hasTouchID || hasFaceID
+   }
 }
 
 // MARK:- Private Properties

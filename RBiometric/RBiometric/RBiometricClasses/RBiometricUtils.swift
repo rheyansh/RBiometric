@@ -18,7 +18,7 @@ class RBiometricText {
    var biometryNotAvailableReason = "Biometric authentication is not available for this device."
    var systemCancelledAuth = "Biometric authentication is cancelled by system."
    var userCancelledAuth = "Authentication was cancelled by user"
-    var userFallbackAuth = "Enter Passcode"
+   var userFallbackAuth = "Enter Passcode"
    var invalidContext = "The context is invalid"
 
    var settings = "Settings"

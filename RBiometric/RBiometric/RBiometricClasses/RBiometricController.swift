@@ -18,6 +18,7 @@ class RBiometricController: UIViewController {
    private var movedToSettings = false
    private var systemCancelledAuth = false
    var showAlertToEnableFromSetting = false
+   var isPresented = false
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -28,7 +29,9 @@ class RBiometricController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    deinit { NotificationCenter.default.removeObserver(self) }
+    deinit {
+      NotificationCenter.default.removeObserver(self)
+   }
 
     private func initialSetup() {
         addObservers()
@@ -62,6 +65,16 @@ class RBiometricController: UIViewController {
             }
         }
     }
+   
+   /// Dismiss Biometric Authenticator
+   func dismissBiometric(_ callBack: (() -> ())?) {
+     RBiometric.shared.controller?.isPresented = false
+
+      dismiss(animated: true) {
+         callBack?()
+      }
+      RBiometric.shared.controller = nil
+   }
 }
 
 // MARK:- Observer Section
@@ -96,6 +109,7 @@ extension RBiometricController {
     @objc func appMovedToBackground() {
         //print("App moved to Background!")
     }
+   
 }
 
 extension RBiometricController {
@@ -110,7 +124,9 @@ extension RBiometricController {
         if showAlertToEnableFromSetting {
             askToEnableFromSetting(error: error)
         } else {
-            showErrorAlert(error)
+            //showErrorAlert(error)
+         
+         dismissBiometric(nil)
         }
     case .userFallback, .biometryLockedout: passcodeAuthentication(message: error.message)
 
@@ -119,7 +135,7 @@ extension RBiometricController {
    }
    
    private func processSuccess() {
-      dismiss(animated: true) { [weak self] in
+      dismissBiometric { [weak self] in
          self?.onAuthSuccess?()
       }
    }
@@ -150,7 +166,7 @@ private extension RBiometricController {
             alert.addAction(UIAlertAction(title: bt.settings,
                                           style: UIAlertAction.Style.destructive,
                                           handler: { (_: UIAlertAction) in
-                                            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
                                             
                                             if UIApplication.shared.canOpenURL(settingsUrl) {
                                              self.movedToSettings = true
@@ -168,4 +184,3 @@ private extension RBiometricController {
         }
     }
 }
-
